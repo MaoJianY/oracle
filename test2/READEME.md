@@ -29,8 +29,8 @@ SQL> GRANT con_res_view TO lyl;
 Grant succeeded.
 SQL> exit
 ```
-![picture](https:./a.png)
-![picture](https:./s.png)
+![picture](./a.png)
+![picture](./s.png)
 
 - 第2步：新用户lyl连接到pdborcl，创建表mytable和视图myview，插入数据，最后将myview的SELECT对象权限授予hr用户。
 
@@ -55,7 +55,7 @@ SQL> GRANT SELECT ON myview TO hr;
 Grant succeeded.
 SQL>exit
 ```
-![picture](https:./d.png)
+![picture](./d.png)
 
 - 第3步：用户hr连接到pdborcl，查询new_user授予它的视图myview
 
@@ -67,7 +67,7 @@ zhang
 wangSQL> exit
 ```
 $ sqlplus hr/123@pdborcl
-![picture](https:./f.png)
+![picture](./f.png)
 > 测试一下同学用户之间的表的共享，只读共享和读写共享都测试一下。
 
 
@@ -95,7 +95,7 @@ SQL>SELECT a.tablespace_name "表空间名",Total/1024/1024 "大小MB",
         group  BY tablespace_name)b
  where  a.tablespace_name = b.tablespace_name;
 ```
-![picture](https:./g.png)
+![picture](./g.png)
 - autoextensible是显示表空间中的数据文件是否自动增加。
 - MAX_MB是指数据文件的最大容量。
 
